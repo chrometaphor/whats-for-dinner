@@ -1,30 +1,13 @@
-//----------------------------------------------------
-//QUERY SELECTORS
-//----------------------------------------------------
-
-// var variableName = document.querySelector('#selection-url');
 var letsCookButton = document.querySelector('#letsCookBtn');
-var cookPotImage = document.querySelector('#cookPotImg')
-var mealMessageText = document.querySelector('#mealMessage')
-var shouldMake = document.querySelector('#shouldMakeWords')
-
-// var selectedMeal = document.querySelector('input[name="meal"]:checked').value;
-
-
-// var currentMeal;
-
-
-//----------------------------------------------------
-//RADIO BUTTON
-//----------------------------------------------------
-var sideDishRadioBtn = document.querySelector('#sideDishRadio')
-var mainDishRadioBtn = document.querySelector('#mainDishRadio')
-var dessertRadioBtn = document.querySelector('#dessertRadio')
-var entireMealRadioBtn = document.querySelector('#entireMealRadio')
-
-//----------------------------------------------------
-//DISHES
-//----------------------------------------------------
+var cookPotImage = document.querySelector('#cookPotImg');
+var mealMessageText = document.querySelector('#mealMessage');
+var shouldMake = document.querySelector('#shouldMakeWords');
+var clearMealButton = document.querySelector('#clearButton');
+var sideDishRadioBtn = document.querySelector('#sideDishRadio');
+var mainDishRadioBtn = document.querySelector('#mainDishRadio');
+var dessertRadioBtn = document.querySelector('#dessertRadio');
+var entireMealRadioBtn = document.querySelector('#entireMealRadio');
+var returnMessage = document.querySelector('#mealMessage');
 var sides = [
     'Miso Glazed Carrots',
     'Coleslaw',
@@ -73,132 +56,47 @@ var desserts = [
     'Tart Tatin',
     'Croissants',
     'Eclairs',
-]
+];
 
-//----------------------------------------------------
-//EVENT LISTENERS
-//----------------------------------------------------
-
-//LETS COOK BUTTON
-letsCookButton.addEventListener('click', getMeal)
-    // event.preventDefault()
-    // getMeal()
-
-// //SIDE DISH RADIO BUTTON
-// sideDishRadioBtn.addEventListener('click', displayRandomSideDish);
-
-// //MAIN DISH RADIO BUTTON
-// mainDishRadioBtn.addEventListener('click', displayRandomMainDish);
-
-// //DESSERT RADIO BUTTON
-// dessertRadioBtn.addEventListener('click', displayRandomDessert);
-
-// //ENTIRE MEAL RADIO BUTTON
-// entireMealRadioBtn.addEventListener('click', displayEntireMeal);
-
-
-
-//----------------------------------------------------
-//FUNCTIONS
-//----------------------------------------------------
-
-
+letsCookButton.addEventListener('click', getMeal);
+clearMealButton.addEventListener('click', clearMeal);
 
 function getRandomIndex(array) {
-    var random = Math.floor(Math.random() * array.length)
-    return array[random]
-}
+    var random = Math.floor(Math.random() * array.length);
+    return array[random];
+};
 
 function getMeal(event) {
-    event.preventDefault() 
-    var selectMeal = document.querySelector('input[name="meals"]:checked').value;
-    var returnMessage = document.querySelector('#mealMessage');
-    
+    event.preventDefault(); 
+    var selectMeal = document.querySelector('input[name="meals"]:checked').value;;
+
     if (selectMeal === 'side') {
-        cookPotImage.classList.add('hidden')
-        shouldMake.classList.remove('hidden')
-        returnMessage.classList.remove('hidden')
-        returnMessage.innerText = getRandomIndex(sides)
+        cookPotImage.classList.add('hidden');
+        shouldMake.classList.remove('hidden');
+        returnMessage.classList.remove('hidden');
+        returnMessage.innerText = getRandomIndex(sides);
+        clearMealButton.classList.remove('hidden');
 
     } else if (selectMeal === 'main') {
-            cookPotImage.classList.add('hidden')
-            shouldMake.classList.remove('hidden')
-            returnMessage.classList.remove('hidden')
-            returnMessage.innerText = getRandomIndex(mains)
+        cookPotImage.classList.add('hidden');
+        shouldMake.classList.remove('hidden');
+        returnMessage.classList.remove('hidden');
+        returnMessage.innerText = getRandomIndex(mains);
+        clearMealButton.classList.remove('hidden');
 
     } else if (selectMeal === 'dessert') {
-            cookPotImage.classList.add('hidden')
-            shouldMake.classList.remove('hidden')
-            returnMessage.classList.remove('hidden')
-            returnMessage.innerText = getRandomIndex(desserts)            
-
-
+        cookPotImage.classList.add('hidden');
+        shouldMake.classList.remove('hidden');
+        returnMessage.classList.remove('hidden');
+        returnMessage.innerText = getRandomIndex(desserts);
+        clearMealButton.classList.remove('hidden');
+    }
 }
+
+function clearMeal(event) {
+    event.preventDefault();
+    cookPotImage.classList.remove('hidden');
+    shouldMake.classList.add('hidden');
+    returnMessage.classList.add('hidden');
+    clearMealButton.classList.add('hidden');
 }
-
-
-    // } else if (selectMeal === 'main') {
-    //         cookPotImage.classList.add('hidden')
-    //         returnMessage.innerHTML = `
-    //         <p> You should make: </p>
-    //         <h1> ${mains[getRandomIndex(mains)]}!</h1>
-    //         `
-                
-    // } else if (selectMeal === 'dessert') {
-    //     cookPotImage.classList.add('hidden')
-    //     returnMessage.innerHTML = `
-    //     <p> You should make: </p>
-    //     <h1> ${desserts[getRandomIndex(desserts)]}!</h1>
-    //     `
-    // }
-    
-    // }
-
-
-// }
-
-    // var selectedMeal = document.querySelector('input[name="meal"]:checked').value;
-    // v
-
-
-
-
-
-
-
-
-// function displayRandomSideDish() {
-//     currentMeal = new Sides (sides[getRandomIndex(sides)])
-
-// }
-
-
-// function displayRandomMainDish() {
-
-// }
-
-
-// function displayRandomDessert() {
-
-// }
-
-
-// function displayEntireMeal() {
-
-// }
-
-//       if (document.getElementById("sideDishRadio").checked) {
-//       radio = "side";
-//       return (sides[getRandomIndex(sides)])
-//     }
-//     else if (document.getElementById("mainDishRadio").checked) {
-//       radio = "main";
-//       return (mains[getRandomIndex(mains)])
-//     }
-//     else if (document.getElementById("dessertRadio").checked) {
-//         radio = "dessert";
-//         return (desserts[getRandomIndex(desserts)])
-//       }
-//     else {
-//       radio = "entireMealRadio";
-//     }

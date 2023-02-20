@@ -1,39 +1,31 @@
-
-
-*/
-
 html {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    /* flex-wrap: wrap;  */
 }
 
 body {
-     background-image: url("assets/burger-friends.jpg");
-    /* background-repeat: no-repeat; */
-    /* background: rgb(255,255,255); */
+    background-image: url("assets/burger-friends.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;   
 }
 
 .top-header {
-height: 10%;
-width: 100vw;
-background-color: rgb(20,185,178);
-/* flex: 100%; */
-display: flex;
-justify-content: flex-end;
-flex-direction: column;
-align-content: center;
-align-items: center;
-
+    height: 10%;
+    width: 100vw;
+    background-color: rgb(20,185,178);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 
 .main-page {
@@ -51,13 +43,11 @@ align-items: center;
     height: 100%;
     width: 100%;
     display: flex;
- 
     flex-direction: row;
     align-content: center;
     align-items: center;
     justify-content: space-evenly;
-    
-    }
+}
 
 
 
@@ -74,13 +64,13 @@ align-items: center;
     align-items: flex-start;
     padding-left: 35px;
     
-    }
+}
 
-    .main-container {
-        width: 350px;
-    }
+.main-container {
+    width: 350px;
+}
     
-    .display-box {
+.display-box {
     border: 1px black solid;
     background-color: rgb(255,255,255);
     opacity: .75;
@@ -91,15 +81,15 @@ align-items: center;
     flex-direction: column;
     align-content: center;
     align-items: center;
-    }
+}
 
-    .cookpot-svg {
-        height: 150px;
-        width: 150px; 
-        align-content: center;
-        align-items: center;
-        justify-content: center;
-    }
+.cookpot-svg {
+    height: 150px;
+    width: 150px; 
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -108,12 +98,6 @@ h2 {
 
 }
     
-
-
-.display-box) {
-    
-}
-
 .lets-cook-button {
     background: rgb(20,185,178);
     float: left;
@@ -125,7 +109,6 @@ h2 {
     float: right;
 }
 
-/* hidden will always be at the bottom */
 .hidden {
     display: none
 }
