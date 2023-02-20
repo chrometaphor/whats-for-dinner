@@ -6,14 +6,39 @@
   </head>
   <body>
     <header class="top-header">
-      
+      <h1>What's for Dinner?</h1>
+      <!-- <button class="add-recipe-button">ADD A RECIPE</button> -->
     </header>
     <main class="main-page">
       <section class="form-container">
         <form class="selection-box">
+
+          <h2>What are you looking for?<FONT COLOR="#FF0000">*</FONT></h2>
+          
+          <div class="side-container">
+            <input type="radio" id="sideDishRadio" name="meals" value="side"/>
+            <label for="sideRadio">Side Dish</label>
+          </div>
+
+          <div class="main-container">
+          <input type="radio" id="mainDishRadio" name="meals" value="main"/>
+          <label for="mainDishRadio">Main Dish</label>
+        </div>
+
+        <div class="dessert-container">
+          <input type="radio" id="dessertRadio" name="meals" value="dessert"/>
+          <label for="dessertRadio">Dessert</label>
+        </div>
+
+          <!-- <input type="radio" id="entireMealRadio" name="meals" value="entireMealRadio"/>
+          <label for="entireMealRadio">Entire Meal</label> -->
+
+          <button class="lets-cook-button" id='letsCookBtn'>LET'S COOK!</button>
         </form>
         <article class="display-box">
-
+          <img class="cookpot-svg" id='cookPotImg' src="assets/cookpot.svg" alt="cooking pot image"/>
+          <h3 class="should-make hidden" id="shouldMakeWords"> You should make: </h3>
+          <p class="meal-message hidden" id="mealMessage"></p>
         </article>
       </section>
 
